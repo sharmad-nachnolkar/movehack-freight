@@ -1,0 +1,28 @@
+{% extends 'efr8/base.html' %}
+{% load staticfiles %}
+
+{% block main %}
+<div class="jumbotron">
+  <h1 class="display-4">Welcome to <strong>efr8!</strong></h1>
+  <p class="lead">Please select your login</p>
+  <hr class="my-4">
+  <a role="button" class="btn btn-dark" href="/liner/">Liner Login</a>
+  <a role="button" class="btn btn-dark" href="/transporter/">Transporter Login</a>
+  <a role="button" class="btn btn-dark" href="/port/">Port Login</a>
+  <br /> <br />
+  <a role="button" class="btn btn-secondary">Customs Login</a>
+  <a role="button" class="btn btn-secondary">Railways Login</a>
+  <br /> <br /> <br /> <br />
+  <!-- <a class="btn btn-primary btn-lg" href="#" role="button">Learn more about us</a> -->
+  <h3 >Why Choose Us?</h3>
+  <p>We are blah blah blah blah blah blah blah blah blah blah blah blah </p>
+  <p>We are blah blah blah blah blah blah blah blah blah blah blah blah </p>
+  <p>We are blah blah blah blah blah blah blah blah blah blah blah blah </p>
+  <p>We are blah blah blah blah blah blah blah blah blah blah blah blah </p>
+  <p>We are blah blah blah blah blah blah blah blah blah blah blah blah </p>
+</div>
+
+{% endblock main%}
+{% block js %}
+  {{block.super}}
+{% endblock js %}
