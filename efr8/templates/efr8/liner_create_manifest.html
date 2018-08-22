@@ -1,0 +1,90 @@
+{% extends 'efr8/base.html' %}
+{% load staticfiles %}
+
+{% block main %}
+<h3>Create a Manifest</h3>
+<form>
+  <div class="form-group">
+  <label for="destination_port">Destination Port</label>
+    <select id="destination_port" class="custom-select">
+        <option selected disabled>Select Destination Port</option>
+        {% for option in ports_list %}
+          <option value='{{option.name}}'>{{option.name}}</option>
+        {% endfor %}
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="vessel">Vessel</label>
+    <select id="vessel" class="custom-select">
+        <option selected disabled>Select Vessel</option>
+        {% for option in vessels_list %}
+          <option value='{{option.name}}'>{{option.name}}</option>
+        {% endfor %}
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="eta_date">ETA</label>
+    <input id="eta_date" type="date" name="ETA" max="3000-12-31" 
+            min="1000-01-01" class="form-control">
+    <input id="eta_time" type="time" name="ETA" class="form-control">
+  </div>
+  <div class="form-group">
+    <label for="container_number">Container Number</label>
+    <input id="container_number" type="text" class="form-control" id="container_id" aria-describedby="containerHelp" placeholder="Enter Container No">
+  </div>
+  <div class="form-group">
+    <label for="container_size">Container Size</label>
+    <select id="container_size" class="custom-select">
+        <option selected disabled>Select Container Size</option>
+        {% for option in container_size_list %}
+          <option value='{{option.name}}'>{{option.name}}</option>
+        {% endfor %}
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="container_type">Container Type</label>
+    <select id="container_type" class="custom-select">
+        <option selected disabled>Select Container Type</option>
+        {% for option in container_type_list %}
+          <option value='{{option.name}}'>{{option.name}}</option>
+        {% endfor %}
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="delivery_type">Delivery Type</label>
+    <select id="delivery_type" class="custom-select">
+        <option selected disabled>Select Delivery Type</option>
+        {% for option in delivery_type_list %}
+          <option value='{{option.name}}'>{{option.name}}</option>
+        {% endfor %}
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="transporter">Transporter</label>
+    <select id="transporter" class="custom-select">
+        <option selected disabled>Select Transporter</option>
+        {% for option in transporter_list %}
+          <option value='{{option.name}}'>{{option.name}}</option>
+        {% endfor %}
+    </select>
+  </div>
+  <div class="form-group">
+    <label for="icd_cfs">ICD / CFS</label>
+    <select id="icd_cfs" class="custom-select">
+        <option selected disabled>Select ICD / CFS</option>
+        {% for option in icd_cfs_list %}
+          <option value='{{option.name}}'>{{option.name}}</option>
+        {% endfor %}
+    </select>
+  </div>
+  <button class="btn btn-primary" onclick="create_liner_manifest()">Create Manifest</button>
+</form>
+
+{% endblock main%}
+{% block js %}
+  {{block.super}}
+  <script type="text/javascript">
+        CSRF_TOKEN = '{{ csrf_token }}'
+  </script>
+  <script type="text/javascript" src="{% static 'efr8/js/create_manifest.js' %}"></script>
+{% endblock js %}

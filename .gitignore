@@ -1,0 +1,30 @@
+#virtual env folder
+venv
+.virtualenv
+.env
+
+#pyenv/virtualenv stuff
+.python-version
+
+*.swp
+
+#sqlite
+*.sqllite*
+#sublime swap files
+.subl*
+
+*.log
+logs/
+bin
+var
+build
+dist
+
+*.pyc
+*.xls
+
+staticfiles
+env
+local_settings
+*.json
+*.pyc

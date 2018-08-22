@@ -1,3 +1,5 @@
 {
-    "deepscan.ignoreConfirmWarning": true
+    "deepscan.ignoreConfirmWarning": true,
+    "python.pythonPath": "${workspaceFolder}/movehack/bin/python",
+    "python.linting.enabled": false
 }
