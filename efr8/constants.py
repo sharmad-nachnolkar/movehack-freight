@@ -31,10 +31,10 @@ delivery_type_list = [
 ]
 
 transporter_list = [
-    {'id': 1, 'name': 'RAIL_OPERATOR-1'},
-    {'id': 2, 'name': 'RAIL_OPERATOR-2'},
-    {'id': 3, 'name': 'CFS_OPERATOR-1'},
-    {'id': 4, 'name': 'CFS_OPERATOR-2'},
+    {'id': 1, 'name': 'RAIL-OPERATOR-1'},
+    {'id': 2, 'name': 'RAIL-OPERATOR-2'},
+    {'id': 3, 'name': 'CFS-OPERATOR-1'},
+    {'id': 4, 'name': 'CFS-OPERATOR-2'},
     {'id': 5, 'name': 'OTHERS'},
 ]
 

@@ -2,13 +2,10 @@
 {% load staticfiles %}
 
 {% block main %}
-<h3>Container Manifest</h3>
+<h3>Rake Status</h3>
     {% if manifest_list|length > 0 %}
         <div class="container">
             <div class="row" style="background-color: lightgrey;">
-                <div class="col-sm border">
-                <strong>Port</strong>
-                </div>
                 <div class="col-sm border">
                 <strong>Vessel</strong>
                 </div>
@@ -19,27 +16,24 @@
                 <strong>Container No.</strong>
                 </div>
                 <div class="col-sm border">
-                <strong>Size</strong>
-                </div>
-                <div class="col-sm border">
-                <strong>Type</strong>
-                </div>
-                <div class="col-sm border">
-                <strong>Delivery</strong>
-                </div>
-                <div class="col-sm border">
                 <strong>Transporter</strong>
                 </div>
                 <div class="col-sm border">
                 <strong>ICD / CFS</strong>
                 </div>
+                <div class="col-sm border">
+                <strong>Status</strong>
+                </div>
+                <div class="col-sm border">
+                <strong>Assigned Rake</strong>
+                </div>
+                <div class="col-sm border">
+                <strong>Re-assign Rake</strong>
+                </div>
             </div>
 
             {% for item in manifest_list %}
                 <div class="row">
-                    <div class="col-sm border">
-                        {{item.destination_port}}
-                    </div>
                     <div class="col-sm border">
                         {{item.vessel}}
                     </div>
@@ -50,25 +44,25 @@
                         {{item.container_number}}
                     </div>
                     <div class="col-sm border">
-                        {{item.container_size}}
-                    </div>
-                    <div class="col-sm border">
-                        {{item.container_type}}
-                    </div>
-                    <div class="col-sm border">
-                        {{item.delivery_type}}
-                    </div>
-                    <div class="col-sm border">
                         {{item.transporter}}
                     </div>
                     <div class="col-sm border">
                         {{item.icd_cfs}}
                     </div>
+                    <div class="col-sm border">
+                        REACHED-PORT
+                    </div>
+                    <div class="col-sm border">
+                        {{item.rake_id}}
+                    </div>
+                    <div class="col-sm border">
+                      <a href='/transporter/'>Re-assign</a>
+                    </div>
                 </div>
             {% endfor %}
         </div>
     {% else %}
-        <h5>No data. <a href="/liner-create-manifest/">Click here</a> to add your first manifest.</h5>
+        <h5>No data found.</h5>
     {% endif %}
 {% endblock main%}
 {% block js %}

@@ -2,13 +2,10 @@
 {% load staticfiles %}
 
 {% block main %}
-<h3>Container Manifest</h3>
+<h3>Vessel ETA</h3>
     {% if manifest_list|length > 0 %}
         <div class="container">
             <div class="row" style="background-color: lightgrey;">
-                <div class="col-sm border">
-                <strong>Port</strong>
-                </div>
                 <div class="col-sm border">
                 <strong>Vessel</strong>
                 </div>
@@ -33,13 +30,13 @@
                 <div class="col-sm border">
                 <strong>ICD / CFS</strong>
                 </div>
+                <div class="col-sm border">
+                <strong>Status</strong>
+                </div>
             </div>
 
             {% for item in manifest_list %}
                 <div class="row">
-                    <div class="col-sm border">
-                        {{item.destination_port}}
-                    </div>
                     <div class="col-sm border">
                         {{item.vessel}}
                     </div>
@@ -64,11 +61,14 @@
                     <div class="col-sm border">
                         {{item.icd_cfs}}
                     </div>
+                    <div class="col-sm border">
+                        REACHED-PORT
+                    </div>
                 </div>
             {% endfor %}
         </div>
     {% else %}
-        <h5>No data. <a href="/liner-create-manifest/">Click here</a> to add your first manifest.</h5>
+        <h5>No data found.</h5>
     {% endif %}
 {% endblock main%}
 {% block js %}

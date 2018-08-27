@@ -2,10 +2,68 @@
 {% load staticfiles %}
 
 {% block main %}
-<div class="jumbotron">
-  <h1 class="display-4">Welcome to Transporter Login</h1>
-</div>
+<h3>Container Rake Mapping</h3>
+    {% if manifest_list|length > 0 %}
+        <div class="container">
+            <div class="row" style="background-color: lightgrey;">
+                <div class="col-sm border">
+                <strong>Vessel</strong>
+                </div>
+                <div class="col-sm border">
+                <strong>ETA</strong>
+                </div>
+                <div class="col-sm border">
+                <strong>Container No.</strong>
+                </div>
+                <div class="col-sm border">
+                <strong>Transporter</strong>
+                </div>
+                <div class="col-sm border">
+                <strong>ICD / CFS</strong>
+                </div>
+                <div class="col-sm border">
+                <strong>Status</strong>
+                </div>
+                <div class="col-sm border">
+                <strong>Assigned Rake</strong>
+                </div>
+                <div class="col-sm border">
+                <strong>Re-assign Rake</strong>
+                </div>
+            </div>
 
+            {% for item in manifest_list %}
+                <div class="row">
+                    <div class="col-sm border">
+                        {{item.vessel}}
+                    </div>
+                    <div class="col-sm border">
+                        {{item.eta_date}}, {{item.eta_time}} 
+                    </div>
+                    <div class="col-sm border">
+                        {{item.container_number}}
+                    </div>
+                    <div class="col-sm border">
+                        {{item.transporter}}
+                    </div>
+                    <div class="col-sm border">
+                        {{item.icd_cfs}}
+                    </div>
+                    <div class="col-sm border">
+                        REACHED-PORT
+                    </div>
+                    <div class="col-sm border">
+                        {{item.rake_id}}
+                    </div>
+                    <div class="col-sm border">
+                      <a href='/transporter/'>Re-assign</a>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    {% else %}
+        <h5>No data found.</h5>
+    {% endif %}
 {% endblock main%}
 {% block js %}
   {{block.super}}
