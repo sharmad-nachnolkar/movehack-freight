@@ -2,9 +2,11 @@
 {% load staticfiles %}
 
 {% block main %}
-<div class="jumbotron">
-  <h1 class="display-4">Welcome to <strong>efr8!</strong></h1>
-  <p class="lead">Please select your login</p>
+<div class="jumbotron" style="background-image:url({% static 'efr8/images/Landing.jpg' %});">
+  <div style="background: #e9ecef; display:inline-block">
+    <h1 class="display-4">Welcome to <strong>efr8!</strong></h1>
+    <p class="lead">Please select your login</p>
+  </div>
   <hr class="my-4">
   <a role="button" class="btn btn-dark" href="/liner/">Liner Login</a>
   <a role="button" class="btn btn-dark" href="/transporter/">Transporter Login</a>

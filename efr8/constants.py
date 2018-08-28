@@ -1,13 +1,16 @@
 ports_list = [
-    {'id': 1, 'name': 'Jamshedpur'},
-    {'id': 2, 'name': 'Delhi'},
-    {'id': 3, 'name': 'Kochi'},
+    {'id': 1, 'name': 'JNPT'},
+    {'id': 2, 'name': 'Mundra'},
+    {'id': 3, 'name': 'Pipavav'},
+    {'id': 4, 'name': 'Kochi'},
+    {'id': 5, 'name': 'Chennai'},
+    {'id': 6, 'name': 'Vizag'},
 ]
 
 vessels_list = [
-    {'id': 1, 'name': 'INI-221'},
-    {'id': 2, 'name': 'INI-902'},
-    {'id': 3, 'name': 'INI-82'},
+    {'id': 1, 'name': 'Emma Maersk'},
+    {'id': 2, 'name': 'CMA CGM Venice'},
+    {'id': 3, 'name': 'Saltoro'},
 ]
 
 container_size_list = [
@@ -39,9 +42,12 @@ transporter_list = [
 ]
 
 icd_cfs_list = [
-    {'id': 1, 'name': 'Jamshedpur'},
-    {'id': 2, 'name': 'Delhi'},
-    {'id': 3, 'name': 'Kochi'},
+    {'id': 1, 'name': 'Delhi'},
+    {'id': 2, 'name': 'Gurgaon'},
+    {'id': 3, 'name': 'Ahmedabad'},
+    {'id': 4, 'name': 'Nagpur'},
+    {'id': 5, 'name': 'Bangalore'},
+    {'id': 6, 'name': 'Mulund'},
 ]
 
 LINER_MANIFEST_FILE_NAME = 'liner_manifest.json'
